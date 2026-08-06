@@ -26,6 +26,7 @@ pip install opencv-python numpy jupyter notebook
 ```
 
 ### Required Model Files (Excluded from Git)
+
 Due to size constraints, the pre-trained weights and configuration files are excluded from this repository via `.gitignore`. You must download them manually and place them in the root directory:
 
 1. **`yolov4.cfg`**: The YOLOv4 network configuration file.
@@ -40,15 +41,19 @@ Due to size constraints, the pre-trained weights and configuration files are exc
 ## How to Run
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/SridharShyam/Object-detection-using-web-camera-using-OpenCV.git
    cd Object-detection-using-web-camera-using-OpenCV
    ```
+
 2. **Download Model Files:** Ensure `yolov4.cfg`, `yolov4.weights`, and `coco.names` are placed inside the project folder alongside the notebook.
 3. **Launch Jupyter Notebook:**
+
    ```bash
    jupyter notebook
    ```
+
 4. **Run the Code:** Open `Object detection using web camera.ipynb` and run all cells. A new window will display the webcam feed with detections.
 5. **Exit:** Press the `q` or `ESC` key while focusing on the webcam window to close the application.
 
