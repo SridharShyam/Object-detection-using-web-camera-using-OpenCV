@@ -1,32 +1,32 @@
-# Real-Time Object Detection using YOLOv4 and OpenCV 📷🚀
+# Real-Time Object Detection using YOLOv4 and OpenCV
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue.svg)
 ![OpenCV](https://img.shields.io/badge/OpenCV-4.x-green.svg)
 ![YOLOv4](https://img.shields.io/badge/YOLO-v4-orange.svg)
 
-This repository contains a simple, yet powerful implementation for **real-time object detection** using your computer's webcam. The project is built in a Jupyter Notebook and leverages the highly accurate and fast **YOLOv4** (You Only Look Once) deep learning model running via OpenCV's `dnn` module.
+This repository contains a Jupyter Notebook implementation for object detection using a webcam. It uses the YOLOv4 deep learning model running via OpenCV's `dnn` module.
 
 ---
 
-## ✨ Features
+## Features
 
-- **Real-Time Inference:** Process live video feed from your webcam seamlessly.
-- **High Accuracy & Speed:** Uses the YOLOv4 architecture which provides an excellent balance between detection speed and accuracy.
-- **80+ Object Classes:** Capable of detecting a wide variety of everyday objects (people, cars, animals, furniture, etc.) out-of-the-box using the pre-trained COCO dataset.
-- **Visual Bounding Boxes:** Draws colored bounding boxes with confidence scores and class labels dynamically on the video stream.
+- **Real-Time Inference:** Processes video feed from a webcam.
+- **YOLOv4 Architecture:** Utilizes the YOLOv4 model for object detection.
+- **COCO Dataset Classes:** Detects objects based on the 80 classes provided by the pre-trained COCO dataset.
+- **Visual Bounding Boxes:** Draws bounding boxes with confidence scores and class labels on the video stream.
 
 ---
 
-## 🛠️ Prerequisites & Setup
+## Prerequisites & Setup
 
-Ensure you have Python installed. You will need the following libraries:
+Ensure you have Python installed along with the following libraries:
 
 ```bash
 pip install opencv-python numpy jupyter notebook
 ```
 
 ### Required Model Files (Excluded from Git)
-Due to size constraints, the pre-trained weights and configuration files are intentionally excluded from this repository via `.gitignore`. You must download them manually and place them in the root directory:
+Due to size constraints, the pre-trained weights and configuration files are excluded from this repository via `.gitignore`. You must download them manually and place them in the root directory:
 
 1. **`yolov4.cfg`**: The YOLOv4 network configuration file.
    - [Download yolov4.cfg](https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov4.cfg)
@@ -37,7 +37,7 @@ Due to size constraints, the pre-trained weights and configuration files are int
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 1. **Clone the repository:**
    ```bash
@@ -49,28 +49,28 @@ Due to size constraints, the pre-trained weights and configuration files are int
    ```bash
    jupyter notebook
    ```
-4. **Run the Code:** Open the `Object detection using web camera.ipynb` notebook and run all cells. A new window will pop up showing your webcam feed with real-time detections!
-5. **Exit:** Press the `q` or `ESC` key while focusing on the webcam window to safely close the application and release the camera.
+4. **Run the Code:** Open `Object detection using web camera.ipynb` and run all cells. A new window will display the webcam feed with detections.
+5. **Exit:** Press the `q` or `ESC` key while focusing on the webcam window to close the application.
 
 ---
 
-## 🧠 How it Works
+## How it Works
 
-1. **Video Capture:** OpenCV captures frames sequentially from the default camera (`cv2.VideoCapture(0)`).
-2. **Preprocessing (Blob Generation):** Each frame is converted into a binary large object (Blob) which involves resizing to a standard dimension (e.g., 416x416), scaling pixel values, and swapping Red and Blue channels.
-3. **Forward Pass:** The blob is fed into the YOLOv4 network loaded via OpenCV's `cv2.dnn.readNetFromDarknet()`.
-4. **Post-processing:** The network outputs predictions. We apply **Non-Maximum Suppression (NMS)** to filter out overlapping, low-confidence bounding boxes, keeping only the most accurate predictions.
-5. **Rendering:** Bounding boxes, labels, and confidence percentages are overlaid onto the original frame and displayed.
-
----
-
-## ⚠️ Troubleshooting
-
-- **Webcam not turning on:** Ensure your webcam is not being used by another application. Try changing `cv2.VideoCapture(0)` to `cv2.VideoCapture(1)` if you have multiple cameras.
-- **Model loading errors:** Double-check that the `yolov4.cfg` and `yolov4.weights` files are exactly in the same directory as the notebook and are not corrupted.
+1. **Video Capture:** OpenCV captures frames from the default camera (`cv2.VideoCapture(0)`).
+2. **Preprocessing:** Each frame is converted into a Blob, resizing to standard dimensions (e.g., 416x416).
+3. **Forward Pass:** The blob is passed into the YOLOv4 network using `cv2.dnn.readNetFromDarknet()`.
+4. **Post-processing:** The network outputs predictions, and Non-Maximum Suppression (NMS) is applied to filter out overlapping bounding boxes.
+5. **Rendering:** Bounding boxes, labels, and confidence percentages are overlaid onto the original frame.
 
 ---
 
-## 🙏 Acknowledgements
+## Troubleshooting
+
+- **Webcam not turning on:** Ensure your webcam is not being used by another application. Change `cv2.VideoCapture(0)` to `cv2.VideoCapture(1)` if you have multiple cameras.
+- **Model loading errors:** Verify that `yolov4.cfg` and `yolov4.weights` are in the same directory as the notebook.
+
+---
+
+## Acknowledgements
 - [Darknet (AlexeyAB)](https://github.com/AlexeyAB/darknet) for the YOLOv4 implementation.
-- [OpenCV](https://opencv.org/) for the robust computer vision and DNN capabilities.
+- [OpenCV](https://opencv.org/) for the DNN module.
