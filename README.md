@@ -68,9 +68,3 @@ Due to size constraints, the pre-trained weights and configuration files are exc
 
 - **Webcam not turning on:** Ensure your webcam is not being used by another application. Change `cv2.VideoCapture(0)` to `cv2.VideoCapture(1)` if you have multiple cameras.
 - **Model loading errors:** Verify that `yolov4.cfg` and `yolov4.weights` are in the same directory as the notebook.
-
----
-
-## Acknowledgements
-- [Darknet (AlexeyAB)](https://github.com/AlexeyAB/darknet) for the YOLOv4 implementation.
-- [OpenCV](https://opencv.org/) for the DNN module.
